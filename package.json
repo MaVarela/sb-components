@@ -7,7 +7,7 @@
   "main": "",
   "homepage": "https://github.com/MaVarela",
   "repository": {
-    "url": "https://github.com/MaVarela/sb-components",
+    "url": "https://github.com/MaVarela/sb-components.git",
     "type": "github"
   },
   "release": {

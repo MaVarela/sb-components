@@ -1,3 +1,32 @@
 # Workflow template
 
-name: CI
+name: Semantic Release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v14
+          with:
+            node-version: 14.17
+
+        - name: Install Dependencies
+          run: npm install
+
+        - name: Build App
+          run: npm run build
+        
+        - name: Semantic Release
+          env:
+            GITHUB_TOKEN: ${{sectrets.GH_TOKEN}}
+            NPM_TOKEN: ${{sectrets.NPM_TOKEN}}
+          run: npx semantic-release

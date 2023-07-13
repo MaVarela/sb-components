@@ -11,9 +11,7 @@
     "type": "github"
   },
   "release": {
-    "branches": [
-      "master"
-    ]
+    "branches": ["main"]
   },
   "peerDependencies": {
     "react": ">=16",
